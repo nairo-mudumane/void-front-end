@@ -34,12 +34,23 @@ export const StyledContact = styled.div`
         justify-content: space-between;
         align-items: flex-start;
 
+        width: 100%;
         height: 100%;
-        margin-right: auto;
     }
 
     .title {
         color: #0f001a;
         font-weight: bold;
+    }
+
+    .heading {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-between;
+        align-items: flex-start;
     }
 `;

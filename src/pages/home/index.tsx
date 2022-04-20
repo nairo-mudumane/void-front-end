@@ -11,7 +11,11 @@ export function Home() {
         data: contacts,
         isLoading,
         isError,
-    } = useQuery("/contacts", getAllContacts);
+        isFetching,
+    } = useQuery("/contacts", getAllContacts, {
+        staleTime: 10,
+        refetchInterval: 10,
+    });
 
     if (isLoading) {
         return (
@@ -44,10 +48,11 @@ export function Home() {
         <Container>
             <StyledHome>
                 <Box className="container">
-                    {contacts &&
-                        contacts!.map((contact) => (
-                            <Contact key={contact.uid} {...contact} />
-                        ))}
+                    {contacts?.length === 0
+                        ? "no contacts found"
+                        : contacts!.map((contact) => (
+                              <Contact key={contact.uid} {...contact} />
+                          ))}
                 </Box>
             </StyledHome>
         </Container>

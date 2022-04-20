@@ -31,7 +31,7 @@ export async function getContactById(contactId: string): Promise<IContact> {
 
 export async function deleteContactById(contactId: string): Promise<void> {
     return await baseUrl
-        .patch<IFetchedData>(`/contacts/${contactId}`)
+        .delete<IFetchedData>(`/contacts/${contactId}`)
         .then(({ data }) => {
             if (data.error) {
                 throw new Error(data.message);

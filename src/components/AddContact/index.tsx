@@ -1,5 +1,6 @@
 import React from "react";
 import {
+    Alert,
     Box,
     Button,
     CircularProgress,
@@ -80,13 +81,19 @@ export function AddContact(props: IProps) {
                             >
                                 Cancel
                             </Button>
-                            <Button type="submit" variant="contained">
-                                {isLoading ? (
-                                    <CircularProgress sx={{ color: "#ffff" }} />
-                                ) : (
-                                    "Send"
-                                )}
-                            </Button>
+                            {isError ? (
+                                <Alert severity="error">Error</Alert>
+                            ) : (
+                                <Button type="submit" variant="contained">
+                                    {isLoading ? (
+                                        <CircularProgress
+                                            sx={{ color: "#ffff" }}
+                                        />
+                                    ) : (
+                                        "Send"
+                                    )}
+                                </Button>
+                            )}
                         </Box>
                     </form>
                 </Box>
