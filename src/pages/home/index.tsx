@@ -14,7 +14,7 @@ export function Home() {
         isFetching,
     } = useQuery("/contacts", getAllContacts, {
         staleTime: 10,
-        refetchInterval: 10,
+        refetchInterval: 2000,
     });
 
     if (isLoading) {

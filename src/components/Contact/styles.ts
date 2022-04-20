@@ -53,4 +53,24 @@ export const StyledContact = styled.div`
         justify-content: space-between;
         align-items: flex-start;
     }
+
+    .form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    input {
+        margin-right: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .buttons {
+        margin-top: 1rem;
+        margin-left: auto;
+        width: max-content;
+    }
 `;
