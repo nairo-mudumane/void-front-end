@@ -1,8 +1,14 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledHome = styled.div`
-.container {
-    max-width: 650px;
-    margin: 0 auto;
-}
-`
+    .isLoading {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .spinner {
+        margin-right: 1rem;
+    }
+`;
